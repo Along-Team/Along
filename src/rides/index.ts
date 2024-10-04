@@ -1,21 +1,28 @@
-const Base = require("../base");
-
-const resource = "/rides";
-
-export class Ride extends Base {
-  createRide(): Promise<any> {
-    return this.invoke(`${resource}/createRide`);
-  }
-  isMoving(): Promise<any> {
-    return this.invoke(`${resource}/isMoving`);
-  }
-  updateRideStatus(): Promise<any> {
-    return this.invoke(`${resource}/updateRideStatus`);
-  }
-  getRidersWithin(): Promise<any> {
-    return this.invoke(`${resource}/getRidersWithin`);
-  }
-  getDistances(): Promise<any> {
-    return this.invoke(`${resource}/getDistances`);
+export class Ride {
+  async getRide(Ride: { passengerId: string }): Promise<any> {
+    if (!Ride.passengerId) {
+      return new Promise((reject) => {
+        reject("Invalid ride details");
+      });
+    } else {
+      const ride = await fetch(
+        "https://project-along.onrender.com/v1/rides/recentride/:passengerid",
+        {
+          method: "GET",
+          body: JSON.stringify(Ride.passengerId),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => res.json());
+      return new Promise((resolve) => {
+        resolve({
+          status: "success",
+          data: {
+            data: ride,
+          },
+        });
+      });
+    }
   }
 }

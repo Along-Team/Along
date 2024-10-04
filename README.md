@@ -25,11 +25,6 @@ Here's a basic example of how to use the Along SDK:
 ```javascript
 const AlongSDK = require('along-sdk');
 
-const along = new AlongSDK({
-    apiKey: 'YOUR_API_KEY',
-    secret: 'YOUR_SECRET'
-});
-
 // Example function call
 along.doSomething()
     .then(response => {

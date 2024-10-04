@@ -1,51 +1,14 @@
-// const Base = require("../base");
-
-const resource = "/passengers";
-
-// export class Passenger extends Base {
-//   signToken(): Promise<any> {
-//     return this.invoke(`${resource}/signToken`);
-//   }
-//   createSendToken(): Promise<any> {
-//     return this.invoke(`${resource}/createSendToken`);
-//   }
-//   signUp(): Promise<any> {
-//     return this.invoke(`${resource}/signUp`);
-//   }
-//   verifyContact(): Promise<any> {
-//     return this.invoke(`${resource}/verifyContact`);
-//   }
-//   login(): Promise<any> {
-//     return this.invoke(`${resource}/login`);
-//   }
-//   protect(): Promise<any> {
-//     return this.invoke(`${resource}/protect`);
-//   }
-//   forgotPassword(): Promise<any> {
-//     return this.invoke(`${resource}/forgotPassword`);
-//   }
-//   resetPassword(): Promise<any> {
-//     return this.invoke(`${resource}/resetPassword`);
-//   }
-//   updatePassenger(): Promise<any> {
-//     return this.invoke(`${resource}/updatePassenger`);
-//   }
-// }
+import {
+  ForgotPassengerPasswordDetailsParams,
+  LoginPassengerDetailsParams,
+  ProtectPassengerDetailsParams,
+  ResetPassengerPasswordDetailsParams,
+  SignUpDetailsParams,
+  VerifyPassengerContactDetailsParams,
+} from "../types";
 
 export class Passengers {
-  async signUp(passengerDetails: {
-    username: string;
-    email: string;
-    password: string;
-    passwordConfirm: string;
-    contact: string;
-    photo: string;
-    cardNumber: string;
-    cvv: string;
-    expiryDate: string;
-    active: boolean;
-    role: string;
-  }): Promise<any> {
+  async signUp(passengerDetails: SignUpDetailsParams): Promise<any> {
     if (
       !passengerDetails.username ||
       !passengerDetails.email ||
@@ -64,7 +27,7 @@ export class Passengers {
       });
     } else {
       const passenger = await fetch(
-        `http://localhost:3000/passengers/signUp?email=${passengerDetails.email}`,
+        `https://project-along.onrender.com/passengers/signUp`,
         {
           method: "POST",
           body: JSON.stringify(passengerDetails),
@@ -73,7 +36,147 @@ export class Passengers {
       ).then((res) => res.json());
       if (!passenger) {
         return new Promise((reject) => {
-          reject("Create Passender failed");
+          reject("Create Passenger failed");
+        });
+      } else {
+        return new Promise((resolve) => {
+          resolve(passenger);
+        });
+      }
+    }
+  }
+
+  async verifyPassengerContact(
+    passengerDetails: VerifyPassengerContactDetailsParams
+  ): Promise<any> {
+    if (!passengerDetails.contact || !passengerDetails.otp) {
+      return new Promise((reject) => {
+        reject("Invalid passenger details");
+      });
+    } else {
+      const passengerToken = await fetch(
+        `https://project-along.onrender.com/passengers/verifyContact`,
+        {
+          method: "POST",
+          body: JSON.stringify(passengerDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      ).then((res) => res.json());
+      if (!passengerToken) {
+        return new Promise((reject) => {
+          reject("Verify Passenger failed");
+        });
+      } else {
+        return new Promise((resolve) => {
+          resolve(passengerToken);
+        });
+      }
+    }
+  }
+
+  async loginPassenger(
+    passengerDetails: LoginPassengerDetailsParams
+  ): Promise<any> {
+    if (!passengerDetails.username || !passengerDetails.password) {
+      return new Promise((reject) => {
+        reject("Invalid passenger details");
+      });
+    } else {
+      const passengerToken = await fetch(
+        `https://project-along.onrender.com/passengers/login`,
+        {
+          method: "POST",
+          body: JSON.stringify(passengerDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      ).then((res) => res.json());
+      if (!passengerToken) {
+        return new Promise((reject) => {
+          reject("Login Passenger failed");
+        });
+      } else {
+        return new Promise((resolve) => {
+          resolve(passengerToken);
+        });
+      }
+    }
+  }
+
+  async protectPassenger(
+    passengerDetails: ProtectPassengerDetailsParams
+  ): Promise<any> {
+    if (!passengerDetails.token) {
+      return new Promise((reject) => {
+        reject("Invalid passenger details");
+      });
+    } else {
+      const passenger = await fetch(
+        `https://project-along.onrender.com/passengers/protect`,
+        {
+          method: "POST",
+          body: JSON.stringify(passengerDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      ).then((res) => res.json());
+      if (!passenger) {
+        return new Promise((reject) => {
+          reject("Protect Passenger failed");
+        });
+      } else {
+        return new Promise((resolve) => {
+          resolve(passenger);
+        });
+      }
+    }
+  }
+
+  async forgotPassengerPassword(
+    passengerDetails: ForgotPassengerPasswordDetailsParams
+  ): Promise<any> {
+    if (!passengerDetails.contact) {
+      return new Promise((reject) => {
+        reject("Invalid passenger details");
+      });
+    } else {
+      const passenger = await fetch(
+        `https://project-along.onrender.com/passengers/forgotPassword`,
+        {
+          method: "POST",
+          body: JSON.stringify(passengerDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      ).then((res) => res.json());
+      if (!passenger) {
+        return new Promise((reject) => {
+          reject("Forgot Passenger failed");
+        });
+      } else {
+        return new Promise((resolve) => {
+          resolve(passenger);
+        });
+      }
+    }
+  }
+
+  async resetPassengerPassword(
+    passengerDetails: ResetPassengerPasswordDetailsParams
+  ): Promise<any> {
+    if (!passengerDetails.contact) {
+      return new Promise((reject) => {
+        reject("Invalid passenger details");
+      });
+    } else {
+      const passenger = await fetch(
+        `https://project-along.onrender.com/passengers/forgotPassword`,
+        {
+          method: "POST",
+          body: JSON.stringify(passengerDetails),
+          headers: { "Content-Type": "application/json" },
+        }
+      ).then((res) => res.json());
+      if (!passenger) {
+        return new Promise((reject) => {
+          reject("Forgot Passenger failed");
         });
       } else {
         return new Promise((resolve) => {

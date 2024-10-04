@@ -1,24 +1,58 @@
-const Base = require("../base");
+import { GetRatingParams } from "../types";
+import { CreateRatingParams } from "../types";
 
-const resource = "/ratings";
+export class Rating {
+  async getRating(Rating: GetRatingParams): Promise<any> {
+    if (!Rating.review || Rating.rating || Rating.driver || Rating.passenger) {
+      return new Promise((reject) => {
+        reject("Invalid rating details");
+      });
+    } else {
+      const rating = await fetch(
+        "https://project-along.onrender.com/v1/rating",
+        {
+          method: "GET",
+          body: JSON.stringify(Rating),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => res.json());
+      return new Promise((resolve) => {
+        resolve({
+          status: "success",
+          data: {
+            data: rating,
+          },
+        });
+      });
+    }
+  }
 
-export class Rating extends Base {
-  getReview(): Promise<any> {
-    return this.invoke(`${resource}/getReview`);
-  }
-  createReview(): Promise<any> {
-    return this.invoke(`${resource}/createReview`);
-  }
-  updateReview(): Promise<any> {
-    return this.invoke(`${resource}/updateReview`);
-  }
-  deleteReview(): Promise<any> {
-    return this.invoke(`${resource}/deleteReview`);
-  }
-  getALLReviews(): Promise<any> {
-    return this.invoke(`${resource}/getALLReviews`);
-  }
-  setTourUserIds(): Promise<any> {
-    return this.invoke(`${resource}/setTourUserIds`);
+  async createRating(Rating: CreateRatingParams): Promise<any> {
+    if (!Rating.driver || Rating.passenger) {
+      return new Promise((reject) => {
+        reject("Invalid rating details");
+      });
+    } else {
+      const rating = await fetch(
+        "https://project-along.onrender.com/v1/rating",
+        {
+          method: "POST",
+          body: JSON.stringify(Rating),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => res.json());
+      return new Promise((resolve) => {
+        resolve({
+          status: "success",
+          data: {
+            data: rating,
+          },
+        });
+      });
+    }
   }
 }

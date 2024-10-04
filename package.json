@@ -1,6 +1,6 @@
 {
   "name": "along-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight SDK for integrating with the Along platform.",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,7 +8,7 @@
   "types": "./dist/index.d.ts",
   "homepage": "",
   "repository": {
-    "url": ""
+    "url": "https://github.com/Along-Team/Along/tree/SDK"
   },
   "scripts": {
     "build": "tsup"
