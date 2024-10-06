@@ -1,8 +1,8 @@
 export type DriverSignUpResponse = { ok: boolean; error: string };
 
-export type Config = {
-  apiKey: string;
-};
+// export type Config = {
+//   apiKey: string;
+// };
 
 export type LoginDriverParams = {
   username: string;
