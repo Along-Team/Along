@@ -1,6 +1,6 @@
 {
   "name": "along-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A lightweight SDK for integrating with the Along platform.",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",

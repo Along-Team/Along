@@ -3,6 +3,9 @@ export type DriverSignUpResponse = { ok: boolean; error: string };
 // export type Config = {
 //   apiKey: string;
 // };
+export type getRideParams = {
+  passengerId: string;
+};
 
 export type LoginDriverParams = {
   username: string;
