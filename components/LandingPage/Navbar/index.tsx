@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
           <div className="self-end">
-            <Button  link="/rider/signup" label="Start Along Now" classNames="rounded-3xl" />
+            <Button  link="/rider/sign-up" label="Start Along Now" classNames="rounded-3xl" />
           </div>
         </div>
       </div>
