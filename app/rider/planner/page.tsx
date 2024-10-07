@@ -6,11 +6,11 @@ import JourneySetup from "@/components/Planner/JourneySetup";
 import TripDetails from "@/components/Planner/TripDetails";
 import TripOptions from "@/components/Planner/TripOptions";
 import { useAppSelector } from "@/redux/store";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import dynamic from "next/dynamic";
-const MapBoxMap = dynamic(() => import("@/components/Planner/MapBoxMap"), {
-  ssr: false,
-});
+
+const MapBoxMap = dynamic(() => import("@/components/Planner/MapBoxMap"));
 
 export default function PlannerPage() {
   const [hasConfirmedRoute, setHasConfirmedRoute] = useState(false);
@@ -24,6 +24,7 @@ export default function PlannerPage() {
   const userDestinationAddress = useAppSelector(
     (state) => state.destinationAddress
   );
+
 
   const setRoute = () => {
     setHasConfirmedRoute(true);

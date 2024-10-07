@@ -8,9 +8,8 @@ import DropOff from "@/components/Planner/DropOff";
 import ToDestination from "@/components/Planner/ToDestination";
 import TicketInformation from "@/components/Planner/TicketInformation";
 import DriverWallet from "@/components/Planner/DriverWallet";
-const MapBoxMap = dynamic(() => import("@/components/Planner/MapBoxMap"), {
-  ssr: false,
-});
+
+const MapBoxMap = dynamic(() => import("@/components/Planner/MapBoxMap"));
 
 export default function PlannerPage() {
   const [openJourneySetup, setOpenJourneySetup] = useState(true);
@@ -75,7 +74,7 @@ export default function PlannerPage() {
         goBack={goBackToDropOff}
         handleClick={viewTripSummary}
       />
-      <MapBoxMap open={showMap} />
+      {/* <MapBoxMap open={showMap} /> */}
 
       <ArrivalConfirmationScreen
         handleClick={viewWalletScreen}

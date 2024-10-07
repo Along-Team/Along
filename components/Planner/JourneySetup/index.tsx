@@ -3,8 +3,13 @@
 import ImageLibrary from "@/components/shared/ImageLibrary";
 import Image from "next/image";
 import React, { useState } from "react";
-import RouteSelector from "./RouteSelector";
+import dynamic from "next/dynamic";
 import Button from "@/components/Button";
+
+// Dynamically import RouteSelector to prevent SSR issues
+const RouteSelector = dynamic(() => import("./RouteSelector"), {
+  ssr: false, // Disable SSR
+});
 
 interface IProps {
   setRoute: () => void;
