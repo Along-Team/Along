@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #1f1f1f;
+  text-align: left;
+  line-height: 1.5;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  @apply text-midnight;
+}
+
+/* underline text */
+.svg_underline {
+  position: relative;
+  white-space: nowrap;
+}
+.svg_underline::after {
+  content: "";
+  width: 110%;
+  height: 16px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/svgs/underline.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* circle text */
+.svg_circle {
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+}
+.svg_circle::after {
+  content: "";
+  width: 110%;
+  height: 70px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/svgs/circle.svg");
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translate(0, -50%);
+}
+
+/* checkbox label/container */
+.checkbox_container {
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox_mark_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+
+  background-color: #fafafa;
+  border-radius: 6px;
+  @apply border border-midnight;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox_container:hover input ~ .checkbox_mark_icon {
+  background-color: #fafafa;
+}
+
+/* When the checkbox is checked, add a orange background */
+.checkbox_container input:checked ~ .checkbox_mark_icon {
+  background-color: #ff8811;
+  border: 2px solid #ffd699;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox_mark_icon:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_container input:checked ~ .checkbox_mark_icon:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_container .checkbox_mark_icon:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.disable-zoom {
+  pointer-events: none; /* Disable all pointer events */
+  touch-action: none; /* Disable pinch-to-zoom on touchscreens */
+}
+
+/* mapbox logo and trademark */
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}

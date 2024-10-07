@@ -1,0 +1,11 @@
+export { default as Heading } from "./Heading";
+export { default as Companies } from "./Companies";
+export { default as HowItWorks } from "./HowItWorks";
+export { default as ExtraIncome } from "./ExtraIncome";
+export { default as Benefits } from "./Benefits";
+export { default as Earning } from "./Earning";
+export { default as Features } from "./Features";
+export { default as FAQs } from "./FAQs";
+export { default as StillGotQuestions } from "./StillGotQuestions";
+export { default as BottomHeader } from "./BottomHeader";
+// export { default as GettingStarted } from "./GettingStarted";
