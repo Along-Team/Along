@@ -1,6 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Ride-Sharing Application
+
+This repository contains the code for a ride-sharing application. The backend is built using Node.js and Express.js, and it handles various functionalities such as user authentication, OTP verification, and distance calculations. The full application will also include a frontend and a developer SDK.
 
 First, run the development server:
 
