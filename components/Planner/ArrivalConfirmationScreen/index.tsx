@@ -83,7 +83,7 @@ const ArrivalConfirmationScreen: React.FC<IProps> = ({
                 {Array(4)
                   .fill("")
                   .map((_, index) => (
-                    <div className="h-[30px] w-[30px]">
+                    <div  key={index} className="h-[30px] w-[30px]">
                       <Image
                         src={ImageLibrary.Star}
                         height={30}

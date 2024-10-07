@@ -25,12 +25,12 @@ const Signup: React.FC<IProps> = ({ isDriverComp }) => {
         "Fill in some details about yourself to create your new account.",
       content: <AccountDetailsForm moveToNextTab={moveToNextTab} />,
     },
-    {
-      label: "Profile picture",
-      subtitle:
-        "Fill in some details about yourself to create your new account.",
-      content: <ProfilePicture moveToNextTab={moveToNextTab} />,
-    },
+    // {
+    //   label: "Profile picture",
+    //   subtitle:
+    //     "Fill in some details about yourself to create your new account.",
+    //   content: <ProfilePicture moveToNextTab={moveToNextTab} />,
+    // },
     {
       label: "Add payment method",
       subtitle: `Connect your travel card or add your debit/credit card`,
@@ -50,12 +50,12 @@ const Signup: React.FC<IProps> = ({ isDriverComp }) => {
         "Fill in some details about yourself to create your new account.",
       content: <AccountDetailsForm moveToNextTab={moveToNextTab} driverAuth />,
     },
-    {
-      label: "Profile picture",
-      subtitle:
-        "Fill in some details about yourself to create your new account.",
-      content: <ProfilePicture moveToNextTab={moveToNextTab} />,
-    },
+    // {
+    //   label: "Profile picture",
+    //   subtitle:
+    //     "Fill in some details about yourself to create your new account.",
+    //   content: <ProfilePicture moveToNextTab={moveToNextTab} />,
+    // },
 
     {
       label: "Enter the code",

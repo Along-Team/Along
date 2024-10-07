@@ -13,6 +13,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
   endIcon?: React.ReactNode;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   endIcon,
   type = "button",
+  disabled = false,
 }) => {
   //   const content = isLoading ? <Spinner /> : label;
   const content = label;
@@ -37,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
           `w-full flex justify-center items-center gap-2 py-4 px-8 rounded-2xl bg-midnight text-white font-semibold text-center text-sm md:text-base `,
           classNames
         )}
-        onClick={onClick}
+        onClick={!disabled ? onClick : undefined}
       >
         {icon && <span className="">{icon}</span>}
 
@@ -55,8 +57,8 @@ const Button: React.FC<ButtonProps> = ({
         `w-full flex justify-center items-center gap-2 py-3 px-6 rounded-2xl bg-midnight text-white font-semibold text-center text-sm md:text-base`,
         classNames
       )}
-      onClick={onClick}
-      disabled={isLoading}
+      onClick={!disabled ? onClick : undefined}
+      disabled={disabled}
     >
       {icon && <span className="">{icon}</span>}
 
