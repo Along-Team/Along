@@ -9,6 +9,7 @@ import axios from "axios";
 import Image from "next/image";
 import ImageLibrary from "@/components/shared/ImageLibrary";
 
+
 interface MapProps {
   open: boolean;
 }
@@ -19,7 +20,6 @@ interface CoordinateType {
   isActive: boolean;
 }
 
-// Dynamically import Mapbox without SSR
 const MapBoxMap: React.FC<MapProps> = ({ open }) => {
   const [viewState, setViewState] = useState({
     longitude: 7.4951,

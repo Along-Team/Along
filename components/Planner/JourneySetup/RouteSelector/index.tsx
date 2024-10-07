@@ -1,7 +1,9 @@
+"use client"
 import { useSearchBoxCore } from "@mapbox/search-js-react";
 import ImageLibrary from "@/components/shared/ImageLibrary";
 import Image from "next/image";
-import { useState } from "react";
+import dynamic from 'next/dynamic';
+import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import {
   fetchUserDestination,
