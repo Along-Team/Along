@@ -2,8 +2,8 @@ const SpanWrapper = ({
   text,
   classNames = "bg-customAlabaster",
 }: {
-  text: string;
-  classNames: string;
+  text?: string;
+  classNames?: string;
 }) => {
   return (
     <span

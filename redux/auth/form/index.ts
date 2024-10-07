@@ -7,7 +7,7 @@ const initialFormState: RiderFormState = {
     userName: "",
     contact: "",
     password: "",
-    photo: "",
+    // photo: "",
     cardNumber: "",
     cvv: "",
     expDate: "",

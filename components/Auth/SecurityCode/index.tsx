@@ -29,7 +29,7 @@ const SecurityCode: React.FC<Props> = ({}) => {
         <VerificationCodeInput />
 
         <p className="text-center mt-6">
-          Haven't received your code?
+          Haven&apos;t received your code?
           <Link
             rel="stylesheet"
             className="text-dark block font-semibold"

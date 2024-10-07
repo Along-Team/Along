@@ -1,5 +1,6 @@
 "use client";
-import { useFormik } from "formik";
+import { useFormik, Formik } from "formik";
+import * as Yup from "yup";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { updateFormData, resetFormData } from "@/redux/auth/form";
 import { riderSignUp } from "@/redux/auth/features";
@@ -18,41 +19,16 @@ const PaymentMethod: React.FC<Props> = ({ moveToNextTab }) => {
   const dispatch = useAppDispatch();
   const formData = useAppSelector((state) => state.form);
 
-  const formik = useFormik({
-    initialValues: {
-      cardNumber: "",
-      cvv: "",
-      expDate: "",
-    },
-    onSubmit: async (values) => {
-      try {
-        // Dispatch action to update form data
-        dispatch(updateFormData(values));
-
-        // Combine all form data
-        const completeData = { ...formData, ...values };
-
-        // Attempt to sign up the rider
-        await dispatch(riderSignUp(completeData)).unwrap();
-
-        // If successful, show a success toast and reset form data
-        toast.success("Sign up completed successfully!");
-        dispatch(resetFormData());
-
-        // Move to the next step
-        moveToNextTab();
-      } catch (error) {
-        // Handle any errors and show an error toast
-        const errorMessage = (error as Error).message || "Something went wrong!";
-        toast.error(`Signup failed: ${errorMessage}`);
-      }
-    },
+  // Define validation schema for payment fields using Yup
+  const validationSchema = Yup.object({
+    cardNumber: Yup.string().required("Card number is required"),
+    cvv: Yup.string().required("CVV is required").min(3, "CVV must be 3 digits"),
+    expDate: Yup.string().required("Expiry date is required"),
   });
-
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="pt-4 pb-10 border-t min-h-96 shadow-sm shadow-grey  border-t-grey">
+      <div className="pt-4 pb-10 border-t min-h-96 shadow-sm shadow-grey border-t-grey">
         <div className="flex justify-between items-center border-b px-8 pb-4 border-b-grey">
           <span className="text-dark text-xl">
             <Icon icon="mdi:bank-outline" />
@@ -82,13 +58,57 @@ const PaymentMethod: React.FC<Props> = ({ moveToNextTab }) => {
           />
         </div>
 
-        <div className="px-6 my-4">
-          <PaymentForm />
-        </div>
-      </div>
+        {/* Wrap the form inside Formik */}
+        <Formik
+          initialValues={{
+            cardNumber: "",
+            cvv: "",
+            expDate: "",
+          }}
+          validationSchema={validationSchema}
+          onSubmit={async (values) => {
+            try {
+              // Dispatch action to update form data
+              dispatch(updateFormData(values));
+              console.log("Form data updated:", { ...formData, ...values });
 
-      <div className="p-8">
-        <Button label="Next" onClick={moveToNextTab} />
+              // Combine all form data
+              const completeData = { ...formData, ...values };
+              console.log("Submitting full signup form data:", completeData);
+
+              // Attempt to sign up the rider
+              await dispatch(riderSignUp(completeData)).unwrap();
+
+              // If successful, show a success toast and reset form data
+              toast.success("OTP sent to your phone number.");
+              dispatch(resetFormData());
+
+              // Move to the next step
+              moveToNextTab();
+            } catch (error) {
+              // Handle any errors and show an error toast
+              const errorMessage = (error as Error).message || "Something went wrong!";
+              toast.error(`Signup failed: ${errorMessage}`);
+              console.error("Signup error:", errorMessage);
+            }
+          }}
+        >
+          {({ handleSubmit, isSubmitting }) => (
+            <div className="px-6">
+              <form onSubmit={handleSubmit}>
+                <PaymentForm />
+              </form>
+              <div className="p-8">
+                <Button
+                  label="Next"
+                  type="submit"
+                  onClick={handleSubmit} // Call handleSubmit on click
+                  isLoading={isSubmitting} // Set button loading state
+                />
+              </div>
+            </div>
+          )}
+        </Formik>
       </div>
     </div>
   );

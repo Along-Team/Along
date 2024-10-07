@@ -7,7 +7,7 @@ const StillGotQuestions: React.FC = () => {
         <div className="md:basis-1/2">
           <h1 className="text-3xl md:text-4xl mb-4">Still got questions?</h1>
           <p className="text-darkGray">
-            If you don't find an answer to your question, contact us, and our
+            If you don&apos;t find an answer to your question, contact us, and our
             team will get in touch with you.
           </p>
         </div>

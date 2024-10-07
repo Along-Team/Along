@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
       <div className="text-center">
         <SpanWrapper text="HOW DOES IT WORK" />
         <h1 className="text-3xl md:text-4xl lg:text-5xl mb-10 md:mb-16 mt-4 md:w-2/3 mx-auto">
-          Experience a seamless journey with Along's
+          Experience a seamless journey with Along&apos;s
           <span className="svg_underline"> simple steps</span>.
         </h1>
       </div>
