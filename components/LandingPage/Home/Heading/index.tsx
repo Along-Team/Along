@@ -40,7 +40,7 @@ const Heading: React.FC = () => {
         </div>
 
         <div className="md:order-4">
-          <Button label="Get Started" classNames="rounded-3xl md:w-auto" />
+          <Button link="/rider/sign-up" label="Get Started" classNames="rounded-3xl md:w-auto" />
         </div>
 
         <div className="self-start md:order-3">
