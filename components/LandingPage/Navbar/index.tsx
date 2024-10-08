@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
           </Link>
         ))}
         {/* <div className="mt-4"></div> */}
-        <Button label="Get Started" classNames="rounded-3xl mt-4" />
+        <Button link="/rider/sign-up" label="Get Started" classNames="rounded-3xl mt-4" />
       </div>
     </nav>
   );
