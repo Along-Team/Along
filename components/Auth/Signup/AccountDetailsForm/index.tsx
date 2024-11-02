@@ -27,9 +27,9 @@ const AccountDetailsForm: React.FC<Props> = ({ moveToNextTab, driverAuth }) => {
     password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
     contact: Yup.string().required("Phone number is required"),
     // Add email validation only if driverAuth is true
-    email: driverAuth
-      ? Yup.string().email("Invalid email address").required("Email is required")
-      : Yup.string(),
+    // email: driverAuth
+    //   ? Yup.string().email("Invalid email address").required("Email is required")
+    //   : Yup.string(),
   });
 
   const formik = useFormik({
@@ -37,7 +37,7 @@ const AccountDetailsForm: React.FC<Props> = ({ moveToNextTab, driverAuth }) => {
       userName: "",
       password: "",
       contact: "",
-      email: driverAuth ? "" : "", // Conditionally include email in the form's initial state
+      // email: driverAuth ? "" : "", // Conditionally include email in the form's initial state
     },
     validationSchema, // Add validation schema
     onSubmit: (values) => {
@@ -51,7 +51,7 @@ const AccountDetailsForm: React.FC<Props> = ({ moveToNextTab, driverAuth }) => {
   return (
     <form className="flex-1 flex flex-col" onSubmit={formik.handleSubmit}>
       <div className="flex flex-col space-y-4 px-8 pb-10 min-h-96 shadow-sm shadow-grey">
-        {driverAuth && (
+        {/* {driverAuth && (
           <InputField
             icon={<Icon className="text-dark" icon="clarity:email-line" />}
             label="Email"
@@ -60,7 +60,7 @@ const AccountDetailsForm: React.FC<Props> = ({ moveToNextTab, driverAuth }) => {
             onChange={formik.handleChange}
             error={formik.touched.email && formik.errors.email ? formik.errors.email : ""}
           />
-        )}
+        )} */}
         <InputField
           icon={<Icon className="text-dark" icon="heroicons:user" />}
           label="User name"
