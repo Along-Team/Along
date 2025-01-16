@@ -1,0 +1,32 @@
+class AlgAssets {
+  static const String halfMap = "assets/images/half_map.png";
+  static const String manImg = "assets/images/handsom-man.jpg";
+  static const String smallLogo = "assets/images/small_logo.png";
+  static const String yellowPattern = "assets/svgs/yellow-pattern.svg";
+  static const String paymentCard = "assets/images/payment_cards.png";
+  static const String atmCard = "assets/svgs/atm_card.svg";
+  static const String logo1 = "assets/images/logo1.png";
+  static const String smallMap = "assets/images/small_map.png";
+  static const String bus = "assets/svgs/bus.svg";
+  static const String person = "assets/svgs/person.svg";
+  static const String ticket = "assets/svgs/ticket.svg";
+  static const String settings = "assets/svgs/settings.svg";
+  static const String map = "assets/svgs/map.svg";
+  static const String notifications = "assets/svgs/notifications.svg";
+  static const String creditCard = "assets/svgs/credit_card.svg";
+  static const String star = "assets/svgs/star.svg";
+  static const String signal = "assets/svgs/signal.svg";
+  static const String lock = "assets/svgs/lock.svg";
+  static const String map2 = "assets/svgs/map2.svg";
+  static const String path1 = "assets/svgs/path1.svg";
+  static const String path2 = "assets/svgs/path2.svg";
+  static const String path3 = "assets/svgs/path3.svg";
+  static const String path4 = "assets/svgs/path4.svg";
+  static const String wallet1 = "assets/svgs/wallet1.svg";
+  static const String wallet2 = "assets/svgs/wallet2.svg";
+  static const String withdraw = "assets/svgs/withdraw.svg";
+  static const String add = "assets/svgs/add.svg";
+  static const String moreHorizontal = "assets/svgs/more_horizontal.svg";
+  static const String targetLocation = "assets/svgs/target_location.svg";
+  static const String line = "assets/svgs/line.svg";
+}
