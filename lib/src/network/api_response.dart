@@ -1,5 +1,3 @@
-
-
 import 'package:along/src/utils/extentions/on_string.dart';
 import 'package:dio/dio.dart';
 
@@ -19,7 +17,7 @@ class ApiResponse {
   }
 
   String? get errorMessage {
-    if (isSuccessful == false && response.data.containsKey('response')) {
+    if (isSuccessful == false) {
       return formatErrorResponse(response.data as Map<String, dynamic>);
     } else {
       return null;
@@ -38,30 +36,32 @@ class ApiResponse {
 
 String formatErrorResponse(Map<String, dynamic> errorJson) {
   // Extract the response map containing errors
-  final errorData = errorJson['response'];
-  if (errorData is String) {
-    return errorData;
-  }
-  Map<String, dynamic>? errorMap =
-      errorJson['response'] as Map<String, dynamic>?;
+  // final errorData = errorJson['status'];
+  // if (errorData is String) {
+  //   return errorData;
+  // }
+  String message = errorJson['message'] as String;
+  // Map<String, dynamic>? errorMap =
+  //     errorJson['response'] as Map<String, dynamic>?;
 
-  if (errorMap == null || errorMap.isEmpty) {
-    return 'An error occurred';
-  }
+  // if (errorMap == null || errorMap.isEmpty) {
+  //   return 'An error occurred';
+  // }
 
-  // Build formatted error messages
-  StringBuffer formattedError = StringBuffer();
+  // // Build formatted error messages
+  // StringBuffer formattedError = StringBuffer();
 
-  errorMap.forEach((key, errors) {
-    // Handle if errors is a string or a list of strings
-    if (errors is List) {
-      // Join multiple error messages for the same field
-      String errorMessages = errors.join('\n• ');
-      formattedError.writeln('${key.toCapitalCase()}:\n• $errorMessages');
-    } else {
-      formattedError.writeln('${key.toCapitalCase()}:\n• $errors');
-    }
-  });
+  // errorMap.forEach((key, errors) {
+  //   // Handle if errors is a string or a list of strings
+  //   if (errors is List) {
+  //     // Join multiple error messages for the same field
+  //     String errorMessages = errors.join('\n• ');
+  //     formattedError.writeln('${key.toCapitalCase()}:\n• $errorMessages');
+  //   } else {
+  //     formattedError.writeln('${key.toCapitalCase()}:\n• $errors');
+  //   }
+  // });
 
-  return formattedError.toString().trim();
+  // return formattedError.toString().trim();
+  return message;
 }

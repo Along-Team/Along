@@ -111,7 +111,7 @@ class SearchBox extends StatelessWidget {
                   width: 97.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.r),
-                    color: Styles.cF1F1F1.withOpacity(0.1),
+                   color: Styles.cF1F1F1.withAlpha(25),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -136,7 +136,7 @@ class SearchBox extends StatelessWidget {
                   padding: Styles.padH20,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.r),
-                    color: Styles.cF1F1F1.withOpacity(0.1),
+                    color: Styles.cF1F1F1.withAlpha(25),
                   ),
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

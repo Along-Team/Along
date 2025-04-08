@@ -1,16 +1,30 @@
 import 'package:along/src/style/style.dart';
+import 'package:along/src/views/driver_pages/driver_planner_initial_page.dart';
+import 'package:along/src/views/driver_pages/driver_planner_progress.dart';
+import 'package:along/src/views/driver_pages/next_dropoff_page.dart';
+import 'package:along/src/views/driver_pages/pickup_page.dart';
+import 'package:along/src/views/driver_pages/trip_success_page.dart';
 import 'package:along/src/views/forget_password_page.dart';
 import 'package:along/src/views/initial_page.dart';
 import 'package:along/src/views/login_page.dart';
+import 'package:along/src/views/overview_pages/next_depatures_page.dart';
+import 'package:along/src/views/overview_pages/over_view_initialpage.dart';
+import 'package:along/src/views/overview_pages/see_bus_page.dart';
+import 'package:along/src/views/overview_pages/your_depatures_page.dart';
 import 'package:along/src/views/profile_pages/profile_details_page.dart';
 import 'package:along/src/views/profile_pages/profile_tab.dart';
 import 'package:along/src/views/registration_page.dart';
 import 'package:along/src/views/settings_pages/address_settings_page.dart';
 import 'package:along/src/views/settings_pages/settings_tab.dart';
+import 'package:along/src/views/ticket_pages/active_wallet.dart';
+import 'package:along/src/views/ticket_pages/buy_single_ticket_page.dart';
+import 'package:along/src/views/ticket_pages/scan_ticket_page.dart';
 import 'package:along/src/views/ticket_pages/ticket_departure.dart';
 import 'package:along/src/views/ticket_pages/ticket_tab.dart';
+import 'package:along/src/views/trips_pages/start_trip_page.dart';
 import 'package:along/src/views/trips_pages/trips_transaction_page.dart';
 import 'package:along/src/views/trips_pages/trips_tab.dart';
+import 'package:along/src/views/ticket_pages/active_tickets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -42,6 +56,91 @@ final route = GoRouter(
       name: ForgetPasswordPage.routhName,
       builder: (context, state) => const ForgetPasswordPage(),
     ),
+
+    ///Ticket Related routes
+    GoRoute(
+      path: ScanTicketPage.routhName,
+      name: ScanTicketPage.routhName,
+      builder: (context, state) => const ScanTicketPage(),
+    ),
+    GoRoute(
+      path: ActiveTickets.routhName,
+      name: ActiveTickets.routhName,
+      builder: (context, state) => const ActiveTickets(),
+    ),
+    GoRoute(
+      path: ActiveWallets.routhName,
+      name: ActiveWallets.routhName,
+      builder: (context, state) => const ActiveWallets(),
+    ),
+
+    GoRoute(
+      path: BuySingleTicketPage.routhName,
+      name: BuySingleTicketPage.routhName,
+      builder: (context, state) => const BuySingleTicketPage(),
+    ),
+    GoRoute(
+      path: DriverPlannerPage.routhName,
+      name: DriverPlannerPage.routhName,
+      builder: (context, state) => const DriverPlannerPage(),
+    ),
+    GoRoute(
+      path: DriverPlannerInitialPage.routhName,
+      name: DriverPlannerInitialPage.routhName,
+      builder: (context, state) => const DriverPlannerInitialPage(),
+    ),
+
+    GoRoute(
+      path: NextDropoffPage.routhName,
+      name: NextDropoffPage.routhName,
+      builder: (context, state) => const NextDropoffPage(),
+    ),
+    GoRoute(
+      path: PickupPage.routhName,
+      name: PickupPage.routhName,
+      builder: (context, state) => const PickupPage(),
+    ),
+
+    GoRoute(
+      path: TripSuccessPage.routhName,
+      name: TripSuccessPage.routhName,
+      builder: (context, state) => const TripSuccessPage(),
+    ),
+
+    GoRoute(
+      path: OverViewInitialpage.routhName,
+      name: OverViewInitialpage.routhName,
+      builder: (context, state) => const OverViewInitialpage(),
+    ),
+
+    GoRoute(
+      path: NextDepaturesPage.routhName,
+      name: NextDepaturesPage.routhName,
+      builder: (context, state) => const NextDepaturesPage(),
+    ),
+
+    GoRoute(
+      path: YourDepaturesPage.routhName,
+      name: YourDepaturesPage.routhName,
+      builder: (context, state) => const YourDepaturesPage(),
+    ),
+
+    GoRoute(
+      path: SeeBusPage.routhName,
+      name: SeeBusPage.routhName,
+      builder: (context, state) => const SeeBusPage(),
+    ),
+     GoRoute(
+      path: StartTripPage.routhName,
+      name: StartTripPage.routhName,
+      builder: (context, state) => const StartTripPage(),
+    ),
+
+    // GoRoute(
+    //   path: DriverPlannerPage.routhName,
+    //   name: DriverPlannerPage.routhName,
+    //   builder: (context, state) => const DriverPlannerPage(),
+    // ),
 
     // GoRoute(
     //   path: HomePage.routhName,

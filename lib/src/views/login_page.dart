@@ -2,6 +2,7 @@ import 'package:along/src/style/style.dart';
 import 'package:along/src/utils/assets.dart';
 import 'package:along/src/utils/validators.dart';
 import 'package:along/src/views/forget_password_page.dart';
+import 'package:along/src/views/overview_pages/over_view_initialpage.dart';
 import 'package:along/src/widgets/button.dart';
 import 'package:along/src/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -107,7 +108,7 @@ class LoginPage extends StatelessWidget with Validators {
                   Button(
                     text: "Log in",
                     onPressed: () {
-                      //
+                      context.push(OverViewInitialpage.routhName); //
                     },
                   ),
                   Styles.hGap10,

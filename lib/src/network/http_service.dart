@@ -15,8 +15,8 @@ class HttpService extends _$HttpService {
 
   final Dio _dio = Dio(BaseOptions(
     baseUrl: Config.baseUrl,
-    connectTimeout: 60.seconds,
-    receiveTimeout: 70.seconds,
+    connectTimeout: 120.seconds,
+    receiveTimeout: 120.seconds,
   ))
     ..interceptors.add(
       PrettyDioLogger(

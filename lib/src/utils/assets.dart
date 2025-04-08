@@ -22,6 +22,7 @@ class AlgAssets {
   static const String path2 = "assets/svgs/path2.svg";
   static const String path3 = "assets/svgs/path3.svg";
   static const String path4 = "assets/svgs/path4.svg";
+  static const String path5 = "assets/svgs/path_5.svg";
   static const String wallet1 = "assets/svgs/wallet1.svg";
   static const String wallet2 = "assets/svgs/wallet2.svg";
   static const String withdraw = "assets/svgs/withdraw.svg";
@@ -29,4 +30,42 @@ class AlgAssets {
   static const String moreHorizontal = "assets/svgs/more_horizontal.svg";
   static const String targetLocation = "assets/svgs/target_location.svg";
   static const String line = "assets/svgs/line.svg";
+  static const String qrcode = "assets/svgs/qr_code.svg";
+  static const String faceId = "assets/svgs/face_id.svg";
+  static const String multiProfile = "assets/svgs/milti_profille.svg";
+  static const String seeBus = "assets/svgs/see_bus.svg";
+  static const String chevronDown = "assets/svgs/chevron_down.svg";
+  static const String adultSvg = "assets/svgs/adult_svg.svg";
+  static const String questionMark = "assets/svgs/question_mark.svg";
+  static const String arrowUpDown = "assets/svgs/up_down_arrow.svg";
+  static const String clockSvg = "assets/svgs/clock.svg";
+  static const String bigBus = "assets/svgs/big_bus.svg";
+  static const String googleMap = "assets/svgs/google_map.png";
+  static const String nextDropoff = "assets/svgs/next_drop_off.svg";
+  static const String lady = "assets/svgs/lady.svg";
+  static const String successIcon = "assets/svgs/success_icon.svg";
+  static const String roadCrossing = "assets/svgs/road_crossing.svg";
+  static const String schoolBus = "assets/svg/school_bus.svg";
+  static const String school = "assets/svg/school.svg";
+  static const expandIcon = "assets/svg/expand_icon.svg";
+  static const partialStar = "assets/images/partial_stars.jpg";
+
+  static const String work = "assets/svg/work.svg";
+  static const String homeLogo = "assets/images/home_icon.jpg";
+  static const String schoolIcon = "assets/images/school.jpg";
+  static const String workIcon = "assets/images/work.jpg";
+  static const String redDot = "assets/images/red_dot.jpg";
+  static const String blackDot = "assets/images/black_dot.jpg";
+  static const String whiteDot = "assets/images/white_dot.jpg";
+  static const String dashedLine = "assets/images/dashed_line.jpg";
+  static const String cancel = "assets/images/cancel.jpg";
+
+  static const String cancelIcon = "assets/svgs/cancel.svg";
+  static const String biggerBus = "assets/svgs/bigger_bus.svg";
+
+  static const String cancelSvg = "assets/svg/cancel_svg.svg";
+  static const String destination = "assets/images/target_destination.jpg";
+  static const String arrowRedirect = "assets/svg/arrow_redirect.svg";
+  static const String locationCurrent = "assets/images/location_current.png";
+  static const String redirectArrow = "assets/images/redirect_arrow.png";
 }

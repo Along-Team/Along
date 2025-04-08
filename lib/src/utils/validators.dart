@@ -36,4 +36,17 @@ mixin Validators {
 
     return null; // Return null if the phone number is valid
   }
+
+  String? validateDebitCard(String? value) {
+    // Regular expression for validating a debit card number
+    String pattern = r'^[0-9]{16}$';
+    RegExp regex = RegExp(pattern);
+
+    if (value == null || value.isEmpty) {
+      return 'Please enter your debit card number';
+    } else if (!regex.hasMatch(value)) {
+      return 'Please enter a valid debit card number';
+    }
+    return null;
+  }
 }

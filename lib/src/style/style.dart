@@ -21,9 +21,25 @@ final class Styles {
       Color.fromRGBO(217, 217, 217, 0.529); //rgba(250, 250, 250, 1)
   static const Color c9D9D9D = Color(0xFF9D9D9D);
   static const Color cFFCE48 = Color(0xFFFFCE48);
+  static const Color c1F1F1F = Color(0xFF1F1F1F);
   static const Color cFFF8F0 = Color(0xFFFFF8F0);
+  static const Color c1CFFFFFF = Color(0x1CFFFFFF);
+  static const Color cFFFFFF = Color(0xFFFFFFFF);
+  static const Color c5A78FF = Color(0xFF5A78FF);
+  static const Color cF5F5F5 = Color(0xFFF5F5F5);
+  static const Color cFF000000 = Color(0xFF000000);
+  static const Color c9E9E9E = Color(0xFF9E9E9E);
+  static const Color cF7F9FB = Color(0xFFF7F9FB);
+  static const Color cx4DF1F1F1 = Color(0x4DF1F1F1);
+
+  ///Gradient Colors
+  static const Color cFFDB7A = Color(0xFFFFDB7A);
+  static const Color cFFE9AD = Color(0xFFFFE9AD);
 
   ///Width size boxs
+  static const wGap2 = SizedBox(
+    width: 2,
+  );
   static const wGap5 = SizedBox(width: 5);
   static const wGap10 = SizedBox(width: 10);
   static const wGap15 = SizedBox(width: 15);
@@ -49,6 +65,7 @@ final class Styles {
   static const pad30 = EdgeInsets.all(30);
 
   ///Vertical
+  static const padV6 = EdgeInsets.symmetric(vertical: 6);
   static const padV10 = EdgeInsets.symmetric(vertical: 10);
   static const padV15 = EdgeInsets.symmetric(vertical: 15);
   static const padV20 = EdgeInsets.symmetric(vertical: 20);
@@ -56,6 +73,7 @@ final class Styles {
 
   ///Horizontal
   static const padH10 = EdgeInsets.symmetric(horizontal: 10);
+  static const padH12 = EdgeInsets.symmetric(horizontal: 12);
   static const padH15 = EdgeInsets.symmetric(horizontal: 15);
   static const padH20 = EdgeInsets.symmetric(horizontal: 20);
   static const padH25 = EdgeInsets.symmetric(horizontal: 25);
